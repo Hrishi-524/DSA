@@ -2,7 +2,6 @@ package BST;
 
 import java.util.ArrayList;
 
-import Array.pairs;
 import TreeBinary.BinaryTreesB.Node;
 
 public class BinarySearchTree {
@@ -219,13 +218,21 @@ public class BinarySearchTree {
     private class Info {
         boolean isBST;
         int size, min, max;
-        void Info(boolean isBST,int size,int min,int max) {
-            this.isBST = isBST;
-            this.size = size;
-            this.min = min;
-            this.max = max;
-        } 
+        // void Info(boolean isBST,int size,int min,int max) {
+        //     this.isBST = isBST;
+        //     this.size = size;
+        //     this.min = min;
+        //     this.max = max;
+        // } 
     }
+
+
+    /**
+     * 
+     * REVISIT
+     * 
+     * 
+     */
     
     public static Info sizeOfLargestBST(Node root, Info info) {
         if(root == null) {
@@ -239,8 +246,11 @@ public class BinarySearchTree {
         Info rightInfo = sizeOfLargestBST(root.right, info);
 
         // 1. deciding if we are valid BST
-        info.isBST = leftInfo.isBST && rightInfo.isBST && isValidBST(root, new Node(Integer.MIN_VALUE), new Node(Integer.MAX_VALUE));
+        info.isBST = leftInfo.isBST && rightInfo.isBST;
 
+        if (info.isBST) {
+            info.isBST = isValidBST(root, new Node(Integer.MIN_VALUE), new Node(Integer.MAX_VALUE));
+        }
         // 2. calculate own self size
         info.size = leftInfo.size + rightInfo.size + 1;
 
