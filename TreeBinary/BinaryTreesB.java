@@ -166,18 +166,7 @@ public class BinaryTreesB {
     
     public static void main(String[] args) {
         // int[] preorder = {1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1};
-        int[] preorder = {1, 2, 4, -1, -1, 5, -1, 6, -1, 7, -1, -1, 3, -1, -1};
-        /**
-         *         1
-         *        / \
-         *       2   3
-         *      / \
-         *     4   5
-         *          \
-         *           6
-         *            \
-         *             7
-         */
+        int[] preorder = {1, 2, 4, -1, -1, 5, -1, 6, -1, 7, -1, -1, 3, -1, -1}; 
         BinaryTree tree = new BinaryTree();
 
         Node root = tree.buildPreorder(preorder);
