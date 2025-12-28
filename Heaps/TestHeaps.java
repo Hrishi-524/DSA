@@ -1,6 +1,5 @@
 package Heaps;
 
-import Heaps.Heap;
 
 public class TestHeaps {
     public static void main(String[] args) {
