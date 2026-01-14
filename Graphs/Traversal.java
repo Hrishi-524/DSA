@@ -14,6 +14,7 @@ public class Traversal {
         }
     }
 
+    @SuppressWarnings("unchecked")
     public static ArrayList<Edge>[] createGraph(int V) {
         ArrayList<Edge>[] graph = new ArrayList[V];
 
@@ -48,10 +49,17 @@ public class Traversal {
     }
 
     public static void bfs(ArrayList<Edge>[] graph) {
-        Queue<Integer> q = new LinkedList<>();
         boolean visited[] = new boolean[graph.length];
+        for(int i=0; i<graph.length; i++) {
+            if(!visited[i])
+                bfsUtil(graph, i, visited);
+        }
+    }
 
-        q.add(0);
+    public static void bfsUtil(ArrayList<Edge>[] graph, int src, boolean visited[]) {
+        Queue<Integer> q = new LinkedList<>();
+
+        q.add(src);
         visited[0] = true;
 
         while (!q.isEmpty()) {
@@ -67,24 +75,24 @@ public class Traversal {
         }
     }
 
-    public static void dfs_helper(ArrayList<Edge>[] graph, int curr, boolean visited[]) {
+    public static void dfsUtil(ArrayList<Edge>[] graph, int curr, boolean visited[]) {
         System.out.print(curr + " ");
         visited[curr] = true;
 
         for (Edge e : graph[curr]) {
             if (!visited[e.dest]) {
-                dfs_helper(graph, e.dest, visited);
+                dfsUtil(graph, e.dest, visited);
             }
         }
     }
 
-    
     public static void dfs(ArrayList<Edge>[] graph) {
         boolean visited[] = new boolean[graph.length];
-        dfs_helper(graph, 0, visited);
+        for (int i = 0; i < visited.length; i++) {
+            if(!visited[i])
+                dfsUtil(graph, i, visited);
+        }
     }
-
-
 
     public static void main(String[] args) {
         /*    

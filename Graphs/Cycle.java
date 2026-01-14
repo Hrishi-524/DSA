@@ -2,8 +2,7 @@ package Graphs;
 
 import java.util.ArrayList;
 
-
-public class Lec3_HasPath {
+public class Cycle {
     public static class Edge {
         int src, dest, wt;
         public Edge(int src, int dest, int wt) {
@@ -28,14 +27,14 @@ public class Lec3_HasPath {
         graph[1].add(new Edge(1, 3, 1));
 
         graph[2].add(new Edge(2, 0, 1));
-        graph[2].add(new Edge(2, 4, 1));
+        // graph[2].add(new Edge(2, 4, 1));
 
         graph[3].add(new Edge(3, 1, 1));
-        graph[3].add(new Edge(3, 4, 1));
+        // graph[3].add(new Edge(3, 4, 1));
         graph[3].add(new Edge(3, 5, 1));
 
-        graph[4].add(new Edge(4, 2, 1));
-        graph[4].add(new Edge(4, 3, 1));
+        // graph[4].add(new Edge(4, 2, 1));
+        // graph[4].add(new Edge(4, 3, 1));
         graph[4].add(new Edge(4, 5, 1));
 
         graph[5].add(new Edge(5, 3, 1));
@@ -47,15 +46,25 @@ public class Lec3_HasPath {
         return graph;
     }
 
-    public static boolean hasPath(ArrayList<Edge>[] graph, int src, int dest, boolean[] visited) {
-        if(src == dest) {
-            return true;
+    public static boolean hasCycle(ArrayList<Edge>[] graph) {
+        boolean[] visited = new boolean[graph.length];
+
+        for (int i = 0; i <  graph.length; i++) {
+            if(!visited[i])
+                if(hasCycleUtil(graph, visited, i, -1)) {
+                    return true;
+                }
         }
 
-        visited[src] = true;
-
-        for (Edge e : graph[src]) {
-            if(!visited[e.dest] && hasPath(graph, e.dest, dest, visited)) {
+        return false;
+    }
+    public static boolean hasCycleUtil(ArrayList<Edge>[] graph, boolean[] visited, int curr, int par) {
+        visited[curr] = true;
+        for(Edge e : graph[curr]) {
+            if(!visited[e.dest] && hasCycleUtil(graph, visited, e.dest, curr)) {
+                return true;
+            } 
+            else if(visited[e.dest] && e.dest != par) {
                 return true;
             }
         }
@@ -71,10 +80,10 @@ public class Lec3_HasPath {
              \      | / \
               2 --- 4    6
         */ 
+
         int V=7;
         ArrayList<Edge>[] graph = createGraph(V);
 
-        boolean visited[] = new boolean[V];
-        System.out.println(hasPath(graph, 0, 5, visited));
+        System.out.println(hasCycle(graph));
     }
 }

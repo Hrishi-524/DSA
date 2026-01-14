@@ -13,6 +13,7 @@ public class Lec1 {
 
     public static void main(String[] args) {
         int V=5;
+        @SuppressWarnings("unchecked")
         ArrayList<Edge> graph[] = new ArrayList[V];
 
         for(int i=0; i<graph.length; i++) {
