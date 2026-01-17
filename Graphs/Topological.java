@@ -1,6 +1,8 @@
 package Graphs;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 public class Topological {
@@ -21,21 +23,22 @@ public class Topological {
             graph[i] = new ArrayList<>();
         }
 
-        graph[0].add(new Edge(0, 1, 1));
-        graph[0].add(new Edge(0, 2, 1));
+        graph[5].add(new Edge(5, 0, 1));
+        graph[5].add(new Edge(5, 2, 1));
 
-        graph[1].add(new Edge(1, 3, 1));
-        graph[1].add(new Edge(1, 0, 1));
-        
-        graph[2].add(new Edge(2, 4, 1));
-        graph[2].add(new Edge(2, 0, 1));
+        graph[4].add(new Edge(4, 0, 1));
+        graph[4].add(new Edge(4, 1, 1));
 
-        graph[3].add(new Edge(3, 4, 1));
         graph[3].add(new Edge(3, 1, 1));
+        
+        graph[2].add(new Edge(2, 3, 1));
 
-        graph[4].add(new Edge(4, 2, 1));
-        graph[4].add(new Edge(4, 3, 1));
-
+        /*
+            5 --> 0 <-- 4
+            ↓           ↓
+            2 --> 3 --> 1
+        */
+        
         return graph;
     }
 
@@ -51,7 +54,7 @@ public class Topological {
         stack.add(curr);
     }
 
-    public static void topologicalSort(ArrayList<Edge>[] graph) {
+    public static void topologicalSort(ArrayList<Edge>[] graph) { // Using DFS Method
         boolean visited[] = new boolean[graph.length];
         Stack<Integer> stack = new Stack<>();
 
@@ -59,13 +62,48 @@ public class Topological {
             if(!visited[i])
                 topologicalSortUtil(graph, i, visited, stack);
         }
-
         while (!stack.isEmpty()) {
             System.out.print(stack.pop()+" ");
         }
     }
+
+    public static int[] calcIndeg(ArrayList<Edge>[] graph) { // O(E)
+        int[] indeg = new int[graph.length];
+        for (int vertex=0; vertex<graph.length; vertex++) { 
+            for(Edge e: graph[vertex]) {
+                indeg[e.dest]++;
+            }
+        }
+        return indeg;
+    }
+
+    public static void kahnsAlgo(ArrayList<Edge>[] graph) { // O(V+E)
+        int[] indeg = calcIndeg(graph); // O(E)
+        Queue<Integer> q = new LinkedList<>();
+
+        for(int i=0; i<indeg.length; i++) { // O(V)
+            if(indeg[i] == 0) {
+                q.add(i);
+            }
+        }
+
+        while (!q.isEmpty()) {
+            int curr = q.remove();
+            System.out.print(curr+" ");
+
+            for(Edge e : graph[curr]) {
+                indeg[e.dest]--;
+                if(indeg[e.dest] == 0) {
+                    q.add(e.dest);
+                }
+            }
+        }
+        System.out.println();
+    }
     
     public static void main(String[] args) {
-        
+        int V = 6;
+        ArrayList<Edge>[] graph = createGraph(V);
+        kahnsAlgo(graph);
     }
 }
