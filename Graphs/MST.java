@@ -69,7 +69,7 @@ public class MST {
                 vis[curr.v] = true;
                 for(Edge e : graph[curr.v]) {
                     // mst[curr.v].add(new Edge(curr.v, , V))
-                
+                    System.out.println(e);
                 }
             }
         }

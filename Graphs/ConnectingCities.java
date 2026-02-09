@@ -49,6 +49,7 @@ public class ConnectingCities {
                           {2, 5, 0, 6, 0},
                           {3, 0, 6, 0, 0},
                           {4, 7, 0, 0, 0}};
+        System.out.println(cities);
 
     }
 }
