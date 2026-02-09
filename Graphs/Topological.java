@@ -5,6 +5,11 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 
+/**
+ *  Easy explaination : 
+ *  "perfrom dfs on graph, while backtracaking add nodes in stack. stack order is topological sort order"
+ */
+
 public class Topological {
     static class Edge {
         int src, dest, wt;

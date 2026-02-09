@@ -41,7 +41,7 @@ public class DirectedCycle {
     public static boolean hasCycle(ArrayList<Edge>[] graph) {
         boolean[] visited = new boolean[graph.length];
         boolean[] stack = new boolean[graph.length];
-        for(int i=0; i<graph.length; i++) {
+        for(int i=0; i<visited.length; i++) {
             if(!visited[i]) {
                 if(hasCycleUtil(graph, visited, i, stack)) {
                     return true;
