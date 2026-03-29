@@ -1,6 +1,9 @@
 package DynamicProgramming;
 
 public class TargetSum {
+    // Is this correct?
+    // Time complexity: O(n*sum)
+
     public static boolean tarSumTab(int[] nums, int sum) {
         int n = nums.length;
         boolean[][] dp = new boolean[n+1][sum+1];
@@ -10,7 +13,7 @@ public class TargetSum {
         }
 
         for(int i=1; i<n+1; i++) {
-            for(int j=0; i<sum+1; j++) {
+            for(int j=0; j<sum+1; j++) {
                 int v = nums[i-1];
                 if(v <= j && dp[i-1][j-v] == true) {
                     dp[i][j] = true;
@@ -24,6 +27,9 @@ public class TargetSum {
         return dp[n][sum];
     }
     public static void main(String[] args) {
-        
+        int[] nums = {1, 2, 3, 4};
+        int sum = 6;
+        System.out.println(tarSumTab(nums, sum));// expected true
+        System.out.println(tarSumTab(nums, 11));// expected false
     }
 }
