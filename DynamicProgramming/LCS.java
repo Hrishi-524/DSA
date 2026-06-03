@@ -24,6 +24,7 @@ public class LCS {
         }
     }
 
+    // Memoization Approach
     public static int LCSUtilMemo(String str1, String str2, int n, int m, int dp[][]) {
         if(n == 0 || m == 0) {
             return 0;
@@ -42,6 +43,7 @@ public class LCS {
         return dp[n][m];
     }
 
+    // Tabulation Approach
     public static int LCSUtilTab(String str1, String str2) {
         int n = str1.length();
         int m = str2.length();

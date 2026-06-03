@@ -1,7 +1,7 @@
 package DynamicProgramming;
 
 public class Catalan {
-    public static int catalanrec(int n) {
+    public static int catalanRec(int n) {
         if(n == 0 || n == 1) {
             return 1;
         }
@@ -48,7 +48,7 @@ public class Catalan {
     }
     
     public static void main(String[] args) {
-        System.out.println(catalanrec(4));
+        System.out.println(catalanRec(4));
         System.out.println(catalanMemo(4, new int[5]));
         System.out.println(catalanTab(4));
     }
