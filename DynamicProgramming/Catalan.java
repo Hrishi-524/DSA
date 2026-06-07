@@ -8,7 +8,7 @@ public class Catalan {
 
         int ans = 0;
         for(int i=0; i<n; i++) {
-            ans += catalanrec(i) * catalanrec(n-i-1);
+            ans += catalanRec(i) * catalanRec(n-i-1);
         }
 
         return ans;
