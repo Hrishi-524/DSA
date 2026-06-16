@@ -1,7 +1,5 @@
 package Array.assignment1;
 
-import Array.prefixSum;
-
 public class buyAndSellStock {
     public static int bestProfitBuyAndSellStock(int prices[]) {
         int buyPrice = Integer.MAX_VALUE;
