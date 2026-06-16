@@ -216,5 +216,5 @@ File structure of DSA folder:
 
 Command Used to generate this file:
 ```
-tree -I "*.class" -L 7 > File.md 
+tree -I "*.class" -L 7 
 ```
