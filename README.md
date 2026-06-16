@@ -1,5 +1,6 @@
 File structure of DSA folder:
-hrishi@DESKTOP-7I56U3F:/mnt/c/Users/HP/Desktop/SIGMA DSA$ tree -I "*.class" -L 7
+```
+41 directories, 170 files
 .
 ├── Array
 │   ├── assignment1
@@ -211,6 +212,9 @@ hrishi@DESKTOP-7I56U3F:/mnt/c/Users/HP/Desktop/SIGMA DSA$ tree -I "*.class" -L 7
         ├── areaOfSquare.java
         ├── avarage.java
         └── bill.java
+```
 
-41 directories, 170 files
-hrishi@DESKTOP-7I56U3F:/mnt/c/Users/HP/Desktop/SIGMA DSA$ 
+Command Used to generate this file:
+```
+tree -I "*.class" -L 7 > File.md 
+```
