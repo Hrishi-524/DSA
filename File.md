@@ -1,4 +1,4 @@
-Following file content contains file structure of my DSA practice, this is not all, some problems are solved online on leetcode and relavant plastforms as well
+File structure of DSA folder:
 hrishi@DESKTOP-7I56U3F:/mnt/c/Users/HP/Desktop/SIGMA DSA$ tree -I "*.class" -L 7
 .
 ├── Array
@@ -114,7 +114,9 @@ hrishi@DESKTOP-7I56U3F:/mnt/c/Users/HP/Desktop/SIGMA DSA$ tree -I "*.class" -L 7
 │       ├── part_1
 │       └── part_2
 │           ├── ConnectedN.java
+│           ├── CourseSchedule.java
 │           ├── FoodFill.java
+│           ├── Matrix01.java
 │           ├── Provinces.java
 │           └── RottenOranges.java
 ├── Greedy
@@ -210,5 +212,5 @@ hrishi@DESKTOP-7I56U3F:/mnt/c/Users/HP/Desktop/SIGMA DSA$ tree -I "*.class" -L 7
         ├── avarage.java
         └── bill.java
 
-41 directories, 168 files
+41 directories, 170 files
 hrishi@DESKTOP-7I56U3F:/mnt/c/Users/HP/Desktop/SIGMA DSA$ 
