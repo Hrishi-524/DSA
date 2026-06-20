@@ -1,14 +1,25 @@
 package Graphs;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
+import java.util.*;
 
 /**
- *  Easy explaination : 
- *  "perfrom dfs on graph, while backtracaking add nodes in stack. stack order is topological sort order"
- */
+    Easy explaination : 
+    "perfrom dfs on graph, while backtracaking add nodes in stack. stack order is topological sort order"
+*/
+
+/*
+    # core idea and intution :-
+
+    Action1 = boil water
+    Action2 = add masala
+    Action3 = add maggie
+    Action4 = serve maggie
+
+    1 2 3 4
+    1 3 2 4
+
+    Add a stack in dfs to track what comes first
+*/
 
 public class Topological {
     static class Edge {
