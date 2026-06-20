@@ -1,6 +1,6 @@
 File structure of DSA folder:
 ```
-41 directories, 170 files
+42 directories, 178 files
 .
 ├── Array
 │   ├── assignment1
@@ -90,7 +90,6 @@ File structure of DSA folder:
 │   │   ├── Part3
 │   │   └── Part4
 │   └── star-in-wild.png
-├── File.md
 ├── Fun
 │   └── DictionaryString.java
 ├── Graphs
@@ -113,13 +112,22 @@ File structure of DSA folder:
 │   ├── Traversal.java
 │   └── sheet
 │       ├── part_1
-│       └── part_2
-│           ├── ConnectedN.java
+│       ├── part_2
+│       │   ├── ConnectedN.java
+│       │   ├── CourseSchedule.java
+│       │   ├── FoodFill.java
+│       │   ├── Matrix01.java
+│       │   ├── NumberOfEncaves.java
+│       │   ├── NumeberOfIslands.java
+│       │   ├── Provinces.java
+│       │   ├── RottenOranges.java
+│       │   ├── SourroundedRegions.java
+│       │   ├── WordLadder.java
+│       │   └── isBipartiteLeetcode.java
+│       └── part_3
 │           ├── CourseSchedule.java
-│           ├── FoodFill.java
-│           ├── Matrix01.java
-│           ├── Provinces.java
-│           └── RottenOranges.java
+│           ├── CourseSchedule2.java
+│           └── EventualSafeNodes.java
 ├── Greedy
 │   ├── AbsoluteDiff.java
 │   ├── Activity.java
@@ -154,6 +162,7 @@ File structure of DSA folder:
 │   ├── QueueReverse.java
 │   ├── QueueTwoStacks.java
 │   └── StackTwoQueues.java
+├── README.md
 ├── Recursion
 │   ├── Assignment
 │   │   ├── ContiguousSubstrings.java
