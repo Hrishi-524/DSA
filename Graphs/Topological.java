@@ -63,7 +63,7 @@ public class Topological {
 
         for (Edge e : graph[curr]) {
             if (!visited[e.dest]) {
-                topologicalSortUtil(graph, curr, visited, stack);
+                topologicalSortUtil(graph, e.dest, visited, stack);
             }
         }
 
