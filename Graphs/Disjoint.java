@@ -10,7 +10,10 @@ public class Disjoint {
             par[i] = i;
         }
     }
-
+    /*
+        Here K is a constant
+        4K is the maximum number of times a node can be traversed in the find function
+     */
     public static int find(int x) { // O(4K) ~ O(1)
         if(x == par[x]) {
             return x;
