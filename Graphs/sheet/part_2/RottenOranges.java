@@ -1,8 +1,6 @@
 package Graphs.sheet.part_2;
 import java.util.*;
 
-// never give me code - for copilot, just need boiler plate
-
 public class RottenOranges {
     class Solution {
     class Pair {
@@ -25,7 +23,7 @@ public class RottenOranges {
         // Keep the count of fresh oranges as if not all oranges rotted at the end we need to return -1
 
         // Create a visited array to keep track of state of oranges at any point of time
-        int[][] vis = new int[n][m];
+        boolean[][] vis = new boolean[n][m];
 
         Queue<Pair> q = new LinkedList<>();
         int totalFresh = 0;
@@ -34,10 +32,9 @@ public class RottenOranges {
             for(int j=0; j<m; j++) {
                 if(grid[i][j] == 2) {
                     q.add(new Pair(i, j, 0));
-                    vis[i][j] = 2;
+                    vis[i][j] = true;
                 } else if(grid[i][j] == 1) {
                     totalFresh++;
-                    vis[i][j] = 1;
                 }
             }
         }
@@ -69,9 +66,9 @@ public class RottenOranges {
                 int nrow = r + drows[i];
                 int ncol = c + dcols[i];
 
-                if(nrow >= 0 && nrow < n && ncol >=0 && ncol < m && vis[nrow][ncol] != 2 && grid[nrow][ncol] == 1) {
+                if(nrow >= 0 && nrow < n && ncol >=0 && ncol < m && !vis[nrow][ncol] && grid[nrow][ncol] == 1) {
                     q.add(new Pair(nrow, ncol, t+1));
-                    vis[nrow][ncol] = 2;
+                    vis[nrow][ncol] = true;
                     cnt++;
                 }
             }

@@ -23,9 +23,9 @@ public class FoodFill {
         int n = image.length;
         int m = image[0].length;
 
-        Queue<Pair> q = new LinkedList<>();
+        Queue<Pair> q = new ArrayDeque<>();
 
-        q.add(new Pair(sr, sc));
+        q.offer(new Pair(sr, sc));
         image[sr][sc] = color;
         
         // [left, up, right, down]
@@ -33,7 +33,7 @@ public class FoodFill {
         int[] dcols = {0, -1, 0, 1};
         
         while(!q.isEmpty()) {
-            Pair curr = q.remove();
+            Pair curr = q.poll();
 
             // left, up, right, down loop - neighbours
             for(int k=0; k<4; k++) {
@@ -41,7 +41,7 @@ public class FoodFill {
                 int y = curr.j + dcols[k];
 
                 if(x >=0 && x < n && y >= 0 && y < m && image[x][y] == startColor) {
-                    q.add(new Pair(x, y));
+                    q.offer(new Pair(x, y));
                     image[x][y] = color;
                 }
             }

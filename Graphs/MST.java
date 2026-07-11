@@ -68,6 +68,7 @@ public class MST {
             if(!vis[curr.v]) {
                 vis[curr.v] = true;
                 for(Edge e : graph[curr.v]) {
+                    pq.add(new Pair(e.dest, e.wt));
                     // mst[curr.v].add(new Edge(curr.v, , V))
                     System.out.println(e);
                 }

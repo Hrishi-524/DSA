@@ -72,7 +72,7 @@ public class Krushkal {
                 union(e.src, e.dest);
                 minCost += e.wt;
                 count++;
-            }
+            } 
         }
 
         System.out.println("MST cost:"+minCost);
