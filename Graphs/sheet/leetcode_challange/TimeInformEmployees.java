@@ -78,7 +78,6 @@ public class TimeInformEmployees {
                 g[manager[i]].add(i); // mannager -> subordinate
             }
 
-            int[] mins = new int[n];
             boolean[] vis = new boolean[n];
             Queue<Pair> q = new ArrayDeque<>();
 
