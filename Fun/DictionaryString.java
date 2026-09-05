@@ -38,7 +38,7 @@ public class DictionaryString {
         for(int i=0; i<str.length(); i++) {
             if(str.charAt(i) == ' ') {
                 ds.append(" ");
-                threadIt(100);
+                // threadIt(0);
                 System.out.println(ds);
                 count++; page++;
                 continue;
@@ -48,13 +48,13 @@ public class DictionaryString {
 
             if(type.equals("special")) {
                 ds.append(str.charAt(i));
-                threadIt(100);
+                // threadIt(100);
                 System.out.println(ds);
                 count++; page++;
                 continue;
             } else if (type.equals("lowercase")) {
                 for(char ch = 'a'; ch <= 'z'; ch++) {
-                    threadIt(100);
+                    // threadIt(100);
                     ds.append(ch);
                     System.out.println(ds);
                     if(ch == str.charAt(i)) {
@@ -66,7 +66,7 @@ public class DictionaryString {
                 }
             } else if (type.equals("uppercase")) {
                 for(char ch = 'A'; ch <= 'Z'; ch++) {
-                    threadIt(100);
+                    // threadIt(100);
                     ds.append(ch);
                     System.out.println(ds);
                     if(ch == str.charAt(i)) {
@@ -78,7 +78,7 @@ public class DictionaryString {
                 }
             } else {
                 for(char ch = '0'; ch <= '9'; ch++) {
-                    threadIt(100);
+                    // threadIt(100);
                     ds.append(ch);
                     System.out.println(ds);
                     if(ch == str.charAt(i)) {
